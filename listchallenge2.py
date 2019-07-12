@@ -16,18 +16,25 @@ name = str(adjList[adjRandomIndex] + " " + nList[nRandomIndex])
 #Lists of different sides, main courses, and desserts to choose from
 sideList = ["fries", "mashed potatoes", "sweet potato fries", "popcorn", "rice", "beans", "salad"]
 mainList = ["hangar steak", "burger", "veggie burger", "eggplant mozzarella", "chicken breast"]
-dessertList = ["chocolate cake", "ice cream", "tiramisu", "cheesecake", "bread", "cupcake"]
+dessertList = ["chocolate cake", "ice cream", "tiramisu", "cheesecake", "bread", "cupcakes"]
 
-#Generates a random integer for the 3 different lists
-aRandomIndex = randint(0, len(sideList)-1)
+
+sides = []
+for i in range(2):
+    x = randint(0, len(sideList)-1)
+    randSide = sideList[x]
+    sides.append(randSide)
+
+
+#Generates a random integer for the 2 different lists
 bRandomIndex = randint(0, len(mainList)-1)
 cRandomIndex = randint(0, len(dessertList)-1)
 
-randSide = sideList[aRandomIndex]
+
 randMain = mainList[bRandomIndex]
 randDess = dessertList[cRandomIndex]
 
 print("Hello, welcome to the " + name + " restaurant!")
-print("Today, our special consists of a main course of a " + randMain +  " with a side of " + randSide
-+ ", and if you have room for dessert, we also have "
-+ randDess + ". We hope you enjoy your meal!" )
+print("Today, our special consists of a main course of a " + randMain +  " with sides of " + sides[0] + " and " + sides[1]
++ ".\n If you have room for dessert, we also have "
++ randDess + ". Enjoy your meal!" )
